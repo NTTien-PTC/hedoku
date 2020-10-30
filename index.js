@@ -55,7 +55,7 @@ const validateMiddleWare = require('./midllerware/validatemiddlerware');
 app.use('/post/store', validateMiddleWare)
 
 //Khoi tao sever
-app.listen(process.env.PORT, () =>
+app.listen(4000, () =>
 {
     console.log('App listening on a port 4000')
 })
@@ -96,3 +96,4 @@ app.get('/auth/logout',logout)
 app.use((req,res) => 
         res.render('404')   
 )
+
