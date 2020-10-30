@@ -33,7 +33,18 @@ app.use(fileUpload())
 
 //ket noi mongodb tu node.js
 const mongoose = require('mongoose');
-mongoose.connect('mongodb://localhost/my_database', { useNewUrlParser: true })
+// mongoose.connect('mongodb://localhost/my_database', { useNewUrlParser: true })
+const uri = "mongodb+srv://admin:admin@123@cluster0.hl5f0.mongodb.net/<dbname>?retryWrites=true&w=majority";
+mongoose.connect(uri, { useNewUrlParser: true })
+
+// const MongoClient = require('mongodb').MongoClient;
+
+// const client = new MongoClient(uri, { useNewUrlParser: true });
+// client.connect(err => {
+//   const collection = client.db("test").collection("devices");
+//   // perform actions on the collection object
+//   client.close();
+// });
 
 //khai bao  luu phien dang nhap
 const expressSession =require('express-session')
