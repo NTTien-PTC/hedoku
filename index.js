@@ -61,7 +61,7 @@ app.use('/post/store', validateMiddleWare)
 // })
 
     app.listen(process.env.PORT, function(){
-        
+        console.log('App listening on a port 4000')
     })
 
 
