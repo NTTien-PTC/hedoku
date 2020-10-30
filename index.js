@@ -55,10 +55,15 @@ const validateMiddleWare = require('./midllerware/validatemiddlerware');
 app.use('/post/store', validateMiddleWare)
 
 //Khoi tao sever
-app.listen(4000, () =>
-{
-    console.log('App listening on a port 4000')
-})
+// app.listen(4000, () =>
+// {
+//     console.log('App listening on a port 4000')
+// })
+
+    app.listen(process.env.PORT, function(){
+        
+    })
+
 
 app.use(expressSession({
     secret: 'keyboard cat'
