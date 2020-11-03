@@ -33,9 +33,9 @@ app.use(fileUpload())
 
 //ket noi mongodb tu node.js
 const mongoose = require('mongoose');
-// mongoose.connect('mongodb://localhost/my_database', { useNewUrlParser: true })
+mongoose.connect('mongodb://localhost/my_database', { useNewUrlParser: true })
 const uri = "mongodb+srv://admin:admin@123@cluster0.hl5f0.mongodb.net/<dbname>?retryWrites=true&w=majority";
-mongoose.connect(uri, { useNewUrlParser: true })
+// mongoose.connect(uri, { useNewUrlParser: true })
 
 // const MongoClient = require('mongodb').MongoClient;
 
@@ -65,14 +65,10 @@ const validateMiddleWare = require('./midllerware/validatemiddlerware');
 
 app.use('/post/store', validateMiddleWare)
 
-//Khoi tao sever
-// app.listen(4000, () =>
-// {
-//     console.log('App listening on a port 4000')
-// })
-
-    app.listen(process.env.PORT, function(){
-        
+//khoi tao sever
+const port = process.env.PORT || 4000
+    app.listen(port, () => {
+        console.log("server is running on port: " +port)
     })
 
 
